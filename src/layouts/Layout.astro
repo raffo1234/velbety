@@ -1,0 +1,36 @@
+---
+import "@fontsource/mulish";
+import "@fontsource/manrope";
+import "@fontsource/lora";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Velbety | Diseño y desarrollo web, marketing digital y branding."
+    />
+    <title>Velbety</title>
+  </head>
+  <body id="app" class="font-mulish opacity-0 transition-opacity duration-200">
+    <slot />
+  </body>
+</html>
+
+<style is:inline>
+  ::selection {
+    background: rgba(255, 218, 121, 0.5);
+  }
+</style>
+
+<script is:inline>
+  window.onload = function () {
+    const app = document.getElementById("app"); // The entire page is fully loaded
+    app.classList.add("opacity-100");
+  };
+</script>

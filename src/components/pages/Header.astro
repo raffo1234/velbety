@@ -1,0 +1,31 @@
+---
+import whatsapp from "../../assets/whatsapp.svg";
+import { Image } from "astro:assets";
+---
+
+<header
+  class="py-4 w-full mb-16 flex items-center justify-between border-b border-gray-200"
+>
+  <h1 class="flex justify-center">
+    <a
+      href="/"
+      title="Velbety | Home page"
+      class="text-lg font-lora tracking-wider"
+    >
+      <b class="block pt-2">Velbety</b>
+    </a>
+  </h1>
+  <a
+    href="https://wa.me/51997258592/?text=Quiero%20reservar%20una%20cita.%20%0AProyecto%20Web%20Velbety"
+    class="py-2 px-5 rounded-full flex space-x-2 items-center border-gray-700 border solid"
+    target="_blank"
+    rel="noopener"
+  >
+    <Image
+      src={whatsapp}
+      alt="Velbety | Whatsapp"
+      class="w-6 absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"
+    />
+    <span class="text-sm">¡Hablemos ya!</span>
+  </a>
+</header>

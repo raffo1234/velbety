@@ -1,0 +1,39 @@
+<section class="mb-40">
+  <h2
+    id="title"
+    class="leading-[1em] text-center font-lora text-nowrap translate-y-4 transition-transform duration-700 ease-in-out"
+    style={{
+      fontSize: "clamp(24px, 10vw + 1rem, 190px)",
+    }}
+  >
+    <span class="text-left block w-full">Arte Digital</span>
+    <span class="text-right block w-full"
+      ><span class="font-manrope text-gray-300">/</span>Agencia</span
+    >
+  </h2>
+</section>
+
+<script is:inline>
+  const title = document.getElementById("title"); // The entire page is fully loaded
+  setTimeout(function () {
+    title.classList.remove("translate-y-4");
+    title.classList.add("translate-y-0");
+  }, 650);
+</script>
+
+<script is:inline>
+  const slides = document.querySelectorAll(".slide-js");
+  let currentSlide = 0;
+
+  slides[0].classList.add("opacity-100");
+
+  function showNextSlide() {
+    for (const el of slides) {
+      el.classList.remove("opacity-100");
+    }
+    slides[currentSlide].classList.add("opacity-100");
+    currentSlide = (currentSlide + 1) % slides.length;
+  }
+
+  setInterval(showNextSlide, 3000);
+</script>

@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/pages/Hero.astro";
+import Header from "../components/pages/Header.astro";
+import Footer from "../components/pages/Footer.astro";
+import areas from "../data/areas";
+import TabNavigationImages from "../components/TabNavigationImages";
+
+const images = areas.map((area) => area.images);
+const hrefs = areas.map((area) => area.href);
+const title = "Lo Que Hemos Creado";
+const description = "Sitios web diseñados para destacar y crecer.";
+const title2 = "Creaciones Digitales";
+const description2 =
+  "Desarrollamos experiencias web que inspiran y convierten.";
+---
+
+<Layout>
+  <main class="max-w-[1280px] mx-auto w-full px-3 sm:px-4 pb-4">
+    <Header />
+    <Hero />
+    <TabNavigationImages
+      client:only
+      title={title}
+      description={description}
+      images={images}
+      hrefs={hrefs}
+    />
+
+    <TabNavigationImages
+      client:only
+      title={title2}
+      description={description2}
+      images={images}
+      hrefs={hrefs}
+    />
+
+    <Footer />
+  </main>
+</Layout>
