@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Icon } from "@iconify/react";
-import { useStore } from "@nanostores/react";
-import { sharedArea, firstSliderImage } from "../stores/states";
+import { firstSliderImage } from "../stores/states";
 
 const Image = ({ src, alt }: { src: string; alt: string }) => {
   const [loading, setLoading] = useState(true);
@@ -23,46 +22,45 @@ const Image = ({ src, alt }: { src: string; alt: string }) => {
 };
 
 export default function TabNavigationImages({
-  images,
+  bigImages,
+  smallImages,
   hrefs,
   title,
   description,
 }: {
-  images: string[][];
+  smallImages: string[][];
+  bigImages: string[][];
   hrefs: string[];
   title: string;
   description: string;
 }) {
-  const $sharedArea = useStore(sharedArea);
-  const area = Number($sharedArea);
-
   return (
     <div className="flex space-x-2 -ml-2 lg:ml-0 mb-10">
       <article className="hidden lg:w-1/4 lg:block rounded-[50px] h-[332px] overflow-hidden">
         <a
-          href={hrefs[area]}
+          href={hrefs[0]}
           onClick={() => firstSliderImage.set("0")}
           title="Ver todas Las Imágenes"
         >
-          <Image src={images[area][0]} alt="Velbety" />
+          <Image src={smallImages[0][0]} alt="Velbety" />
         </a>
       </article>
       <article className="hidden md:w-1/3 lg:w-1/4 md:block rounded-[50px] h-[332px] overflow-hidden">
         <a
-          href={hrefs[area]}
+          href={hrefs[1]}
           onClick={() => firstSliderImage.set("1")}
           title="Ver todas Las Imágenes"
         >
-          <Image src={images[area][1]} alt="Velbety" />
+          <Image src={smallImages[1][0]} alt="Velbety" />
         </a>
       </article>
       <article className="w-1/2 lg:w-1/4 md:w-1/3 rounded-[50px] h-[332px] overflow-hidden">
         <a
-          href={hrefs[area]}
+          href={hrefs[2]}
           onClick={() => firstSliderImage.set("2")}
           title="Ver todas Las Imágenes"
         >
-          <Image src={images[area][2]} alt="Velbety" />
+          <Image src={smallImages[2][0]} alt="Velbety" />
         </a>
       </article>
       <article className="w-1/2 md:w-1/3 lg:w-1/4">
@@ -70,7 +68,7 @@ export default function TabNavigationImages({
           <h3 className="text-lg sm:text-2xl mb-5 font-bold">{title}</h3>
           <p>{description}</p>
           <a
-            href={hrefs[area]}
+            href={hrefs[0]}
             onClick={() => firstSliderImage.set("0")}
             title="Ver todas Las Imágenes"
             className="w-16 flex items-center justify-center h-16 rounded-full
