@@ -14,7 +14,14 @@ import Footer from "../components/pages/Footer.astro";
     <div class="grow flex flex-col justify-end">
       <section class="md:flex justify-between">
         <div class="md:w-1/2 mb-6 md:mb-0">
-          <h1 class="font-lora text-3xl mb-6">Contáctanos</h1>
+          <h1
+            class="font-lora text-3xl mb-6 leading-[1em]"
+            style={{
+              fontSize: "clamp(24px, 10vw + 1rem, 100px)",
+            }}
+          >
+            Contáctanos
+          </h1>
           <p class="md:text-xl leading-relaxed">
             ¿Tienes preguntas o necesitas ayuda? <br /> En Velbety, estamos aquí
             para ti. <br /> Llámanos o envíanos un mensaje por WhatsApp y conversemos.
@@ -22,7 +29,7 @@ import Footer from "../components/pages/Footer.astro";
         </div>
         <a
           href="http://wa.me/51997258592"
-          class="p-6 flex self-start text-center rounded-md border border-gray-200 space-x-3"
+          class="mt-4 p-6 flex self-start text-center rounded-md border border-gray-200 space-x-3"
           target="_blank"
           rel="noopener noreferrer"
         >
