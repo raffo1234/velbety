@@ -17,7 +17,7 @@ import "@fontsource/lora";
     />
     <title>Velbety</title>
   </head>
-  <body id="app" class="font-mulish opacity-0 transition-opacity duration-200">
+  <body id="app" class="font-mulish">
     <slot />
   </body>
 </html>
@@ -27,10 +27,3 @@ import "@fontsource/lora";
     background: rgba(255, 218, 121, 0.5);
   }
 </style>
-
-<script is:inline>
-  window.onload = function () {
-    const app = document.getElementById("app"); // The entire page is fully loaded
-    app.classList.add("opacity-100");
-  };
-</script>

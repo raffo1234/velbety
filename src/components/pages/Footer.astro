@@ -6,7 +6,10 @@ const now = new Date();
 const currentYear = now.getFullYear();
 ---
 
-<footer class="text-sm font-lora md:mt-20 mt-10">
+<footer
+  id="footer"
+  class="opacity-0 transition-opacity ease-in-out duration-150 text-sm font-lora md:mt-20 mt-10"
+>
   <section
     class="flex items-center md:space-x-10 space-x-5 border-y border-gray-200 md:py-10 py-5"
   >
@@ -37,3 +40,15 @@ const currentYear = now.getFullYear();
     <a href="/" title="Velbety" class="p-3 font-bold">Velbety</a>
   </div>
 </footer>
+
+<script is:inline>
+  const footer = document.getElementById("footer");
+  console.log(footer);
+  if (footer) {
+    const classes = ["opacity-100"];
+    setTimeout(() => {
+      footer.classList.remove("opacity-0");
+      footer.classList.add(...classes);
+    }, 100);
+  }
+</script>
