@@ -3,8 +3,23 @@ const now = new Date();
 const currentYear = now.getFullYear();
 ---
 
-<footer
-  class="text-right text-sm font-lora py-10 mt-24 border-t border-gray-200"
->
-  © {currentYear} Velbety. All rights reserved.
+<footer class="text-sm font-lora pt-10 mt-24">
+  <section class="flex items-center space-x-10 border-y border-gray-200 py-10">
+    <a
+      href="/"
+      title="Vebelty"
+      class="h-10 w-10 grid place-items-center text-lg rounded-md bg-orange-800 text-white"
+      >V</a
+    >
+    <div>
+      <h5 class="font-lora font-bold mb-2">Contacto</h5>
+      <p class="">+51 997258592</p>
+    </div>
+  </section>
+  <div class="pt-7 pb-3 flex items-center justify-between">
+    <p>
+      Copyright© {currentYear} Velbety. All rights reserved.
+    </p>
+    <a href="/" title="Velbety" class="p-3 font-bold">Velbety</a>
+  </div>
 </footer>
