@@ -17,14 +17,16 @@ const description = "Sitios web diseñados para destacar y crecer.";
   <main class="max-w-[1280px] mx-auto w-full px-3 sm:px-4">
     <Header />
     <Hero />
-    <TabNavigationImages
-      client:only
-      title={title}
-      description={description}
-      bigImages={bigImages}
-      smallImages={smallImages}
-      hrefs={hrefs}
-    />
+    <div id="portafolio">
+      <TabNavigationImages
+        client:only
+        title={title}
+        description={description}
+        bigImages={bigImages}
+        smallImages={smallImages}
+        hrefs={hrefs}
+      />
+    </div>
     <Footer />
   </main>
 </Layout>
